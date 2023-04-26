@@ -1,8 +1,8 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+
 import * as config from 'config';
 
 import { UserEntity } from '../auth/entities/user.entity';
-
 import { IDatabaseConfig } from './config.interface';
 
 const databaseConfig = config.get<IDatabaseConfig>('db');

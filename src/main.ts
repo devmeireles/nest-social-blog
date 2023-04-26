@@ -1,10 +1,12 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
-import * as config from 'config';
-import { IServerConfig } from './config/config.interface';
-import { HttpExceptionFilter } from './common/filters/http-exception/http-exception.filter';
+import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+import * as config from 'config';
+
+import { AppModule } from './app.module';
+import { HttpExceptionFilter } from './common/filters/http-exception/http-exception.filter';
+import { IServerConfig } from './config/config.interface';
 
 async function bootstrap() {
   const serverConfig = config.get<IServerConfig>('server');
