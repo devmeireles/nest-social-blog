@@ -5,7 +5,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin', "eslint-plugin-import-helpers"],
+  plugins: ['@typescript-eslint/eslint-plugin', 'eslint-plugin-import-helpers'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
@@ -21,29 +21,36 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    "@typescript-eslint/no-unused-vars": ["warn"],
-    "no-use-before-define": ["off"],
-    "@typescript-eslint/no-use-before-define": "off",
-    "import-helpers/order-imports": [
-      "warn",
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    'no-use-before-define': ['off'],
+    '@typescript-eslint/no-use-before-define': 'off',
+    'import-helpers/order-imports': [
+      'warn',
       {
-        "newlinesBetween": "always",
-        "groups": [
-          "/@nestjs.*/",
-          "/typeorm.*/",
-          "/@shared.*/",
-          [
-            "module"
-          ],
-          [
-            "absolute"
-          ]
+        newlinesBetween: 'always',
+        groups: [
+          '/@nestjs.*/',
+          '/typeorm.*/',
+          '/@shared.*/',
+          ['module'],
+          ['absolute'],
         ],
-        "alphabetize": {
-          "order": "asc",
-          "ignoreCase": true
-        }
-      }
-    ]
+        alphabetize: {
+          order: 'asc',
+          ignoreCase: true,
+        },
+      },
+    ],
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: false,
+        ignoreRegExpLiterals: true,
+      },
+    ],
   },
 };
